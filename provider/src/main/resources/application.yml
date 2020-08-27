@@ -16,6 +16,10 @@ nacos:
 dubbo:
   application:
     name: ${spring.application.name}
+  # 服务提供端配置
+  provider:
+    # 超时时间，单位：毫秒
+    timeout: 6000
   # 扫描带有@DubboService注解的包
   scan:
     base-packages: com.teacherblitz.service.impl
