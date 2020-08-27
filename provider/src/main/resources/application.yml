@@ -27,6 +27,12 @@ dubbo:
   protocol:
     name: dubbo
     port: 20880
-  # 注册地址
+  # 注册中心地址
   registry:
+    address: nacos://${nacos.service-address}:${nacos.port}
+  # nacos config配置
+  config-center:
+    # 命名空间
+    namespace: cb939333-2b97-4eff-aeff-e1c4f6756531
+    # 配置中心地址
     address: nacos://${nacos.service-address}:${nacos.port}
