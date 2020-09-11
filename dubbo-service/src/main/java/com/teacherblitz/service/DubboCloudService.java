@@ -6,7 +6,7 @@ package com.teacherblitz.service;
  * @author: <a href="mailto:teacherblitz@gmail.com">teacherblitz</a>
  * @since: 2020/8/14
  */
-public interface DemoService {
+public interface DubboCloudService {
 
     /**
      * 入门案例接口

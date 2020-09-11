@@ -1,6 +1,6 @@
 package com.teacherblitz.controller;
 
-import com.teacherblitz.service.DemoService;
+import com.teacherblitz.service.DubboCloudService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping("/demo")
-public class DemoController {
+@RequestMapping("/dubbo")
+public class DubboCloudController {
 
     @Value("${dubbo.application.name}")
     private String serviceName;
 
     @DubboReference(version = "1.0.0")
-    private DemoService demoService;
+    private DubboCloudService dubboCloudService;
 
     /**
      * 测试案例
@@ -30,8 +30,8 @@ public class DemoController {
      */
     @RequestMapping("/")
     public String dayHello() {
-        String name = demoService.sayHello("teacherblitz");
-        log.info("[{}]：接收到消息={}", serviceName, name);
+        String name = dubboCloudService.sayHello("teacherblitz");
+        log.info("【服务消费者】：接收到消息={}", name);
         return name;
     }
 
