@@ -4,14 +4,16 @@ server:
 spring:
   application:
     name: @artifactId@
+  main:
+    allow-bean-definition-overriding: true
   cloud:
     nacos:
       discovery:
         server-addr: @nacos.server@
-        namespace: f584899c-276b-4385-b6c8-1f0f3699c53c
+        namespace: @nacos.namespace@
       config:
         server-addr: @nacos.server@
-        namespace: f584899c-276b-4385-b6c8-1f0f3699c53c
+        namespace: @nacos.namespace@
         file-extension: yml
         shared-configs:
           - ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
