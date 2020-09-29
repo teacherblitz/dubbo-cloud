@@ -1,0 +1,13 @@
+server:
+  port: 30000
+
+spring:
+  application:
+    name: customer
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: spring-cloud://127.0.0.1:8848
+  cloud:
+    subscribed-services: 'provider'
