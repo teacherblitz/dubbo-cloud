@@ -231,3 +231,6 @@ CREATE TABLE `users`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+INSERT INTO `nacos_config`.`roles`(`username`, `role`) VALUES ('nacos', 'ROLE_ADMIN');
+INSERT INTO `nacos_config`.`users`(`username`, `password`, `enabled`) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', 1);
